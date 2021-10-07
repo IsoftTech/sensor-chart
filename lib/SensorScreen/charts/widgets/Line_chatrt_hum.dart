@@ -46,7 +46,7 @@ class _LineChartHumState extends State<LineChartHum> {
                     LineSeries<SensorData, String>(
                       dataSource: chartData,
                       xValueMapper: (SensorData sensors, _) =>
-                          sensors.timeStamp,
+                          sensors.timeStamp.toString(),
                       yValueMapper: (SensorData sensors, _) =>
                           sensors.sensorValue,
                     )
