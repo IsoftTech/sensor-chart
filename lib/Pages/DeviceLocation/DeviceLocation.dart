@@ -1,28 +1,24 @@
-import 'package:api_example_app/LandingScreen/components/Cards.dart';
-import 'package:api_example_app/LandingScreen/components/control_button.dart';
-import 'package:api_example_app/LandingScreen/components/default_button.dart';
-import 'package:api_example_app/SensorScreen/charts/GasChart.dart';
-import 'package:api_example_app/SensorScreen/charts/HumChart.dart';
-import 'package:api_example_app/SensorScreen/charts/MoisChart.dart';
-import 'package:api_example_app/SensorScreen/charts/NurChart.dart';
-import 'package:api_example_app/SensorScreen/charts/PhChart.dart';
-import 'package:api_example_app/SensorScreen/charts/SoilPatChart.dart';
-import 'package:api_example_app/SensorScreen/charts/SoilPhosChart.dart';
-import 'package:api_example_app/SensorScreen/charts/TemChart.dart';
-import 'package:api_example_app/SensorScreen/charts/chartComponents/HumCard.dart';
-import 'package:api_example_app/SensorScreen/components/sensor_screen.dart';
-import 'package:api_example_app/bloc.navigation_bloc/navigation_bloc.dart';
-import 'package:api_example_app/constants.dart';
-import 'package:flutter/cupertino.dart';
+import '../../LandingScreen/components/Cards.dart';
+import '../../SensorScreen/charts/GasChart.dart';
+import '../../SensorScreen/charts/HumChart.dart';
+import '../../SensorScreen/charts/MoisChart.dart';
+import '../../SensorScreen/charts/NurChart.dart';
+import '../../SensorScreen/charts/PhChart.dart';
+import '../../SensorScreen/charts/TemChart.dart';
+import '/bloc.navigation_bloc/navigation_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class LandingScreenBody extends StatefulWidget with NavigationStates {
+import '../../constants.dart';
+
+class DevicesLocation extends StatefulWidget with NavigationStates {
+  // DevicesLocation({Key? key}) : super(key: key);
+
   @override
-  _LandingScreenBodyState createState() => _LandingScreenBodyState();
+  _DevicesLocationState createState() => _DevicesLocationState();
 }
 
-class _LandingScreenBodyState extends State<LandingScreenBody> {
+class _DevicesLocationState extends State<DevicesLocation> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -36,7 +32,7 @@ class _LandingScreenBodyState extends State<LandingScreenBody> {
             SizedBox(height: size.height * 0.1),
             Center(
               child: Text(
-                'ngDAQ-TD4PAI',
+                'Device Locations',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -48,12 +44,9 @@ class _LandingScreenBodyState extends State<LandingScreenBody> {
             SizedBox(height: size.height * 0.01),
             Center(
               child: Text(
-                'Real-time Smart Environment Monitoring System including Soil Parameters',
+                'The ngDAQ is a Smart Agriculture solution based on IoT, seeking to increase farm productivity by automation and monitoring.',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: kDarkGreyColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(color: kDarkGreyColor, fontSize: 12),
               ),
             ),
             SizedBox(height: size.height * 0.05),
@@ -74,9 +67,9 @@ class _LandingScreenBodyState extends State<LandingScreenBody> {
                 ),
                 CardsParent(
                   size: size,
-                  title: 'Light ',
-                  subtitle: 'Intensity',
-                  icon: FontAwesomeIcons.lightbulb,
+                  title: 'Hum ',
+                  subtitle: '75%',
+                  icon: FontAwesomeIcons.cloudShowersHeavy,
                   onTap: () {
                     Navigator.push(
                         context,
@@ -105,7 +98,7 @@ class _LandingScreenBodyState extends State<LandingScreenBody> {
                   size: size,
                   title: 'PH ',
                   subtitle: '14',
-                  icon: FontAwesomeIcons.phabricator,
+                  icon: FontAwesomeIcons.meteor,
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => new PhChart()));
@@ -130,9 +123,9 @@ class _LandingScreenBodyState extends State<LandingScreenBody> {
                 ),
                 CardsParent(
                   size: size,
-                  title: 'Soil ',
-                  subtitle: 'Cond',
-                  icon: FontAwesomeIcons.solidLifeRing,
+                  title: 'Cont ',
+                  subtitle: 'Good',
+                  icon: FontAwesomeIcons.flask,
                   onTap: () {
                     Navigator.push(
                         context,
@@ -142,38 +135,7 @@ class _LandingScreenBodyState extends State<LandingScreenBody> {
                 ),
               ],
             ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CardsParent(
-                  size: size,
-                  icon: FontAwesomeIcons.watchmanMonitoring,
-                  title: 'Soil\nPhos',
-                  subtitle: 'Good',
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => new SoilPhosChart()));
-                  },
-                ),
-                CardsParent(
-                  size: size,
-                  title: 'Soil K',
-                  subtitle: 'Good',
-                  icon: FontAwesomeIcons.confluence,
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => new SoilPatChart()));
-                  },
-                ),
-              ],
-            ),
-
-            SizedBox(height: size.height * 0.2),
+            // SizedBox(height: size.height * 0.05),
             // DefaultButton(
             //   size: size,
             //   title: "Next",

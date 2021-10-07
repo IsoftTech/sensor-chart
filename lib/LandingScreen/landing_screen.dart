@@ -7,7 +7,8 @@ class LandingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: SideDrawer(),
-      appBar: AppBar(title: Text('ngDAQ'), backgroundColor: kOrangeColor),
+      appBar:
+          AppBar(title: Text('ngDAQ-TD4PAI'), backgroundColor: kOrangeColor),
       body: LandingScreenBody(),
     );
   }

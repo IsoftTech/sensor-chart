@@ -21,10 +21,18 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  cupertino_icons: ^1.0.0
+  fl_chart: ^0.36.1
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.0
+  flutter_bloc: ^7.0.1
   font_awesome_flutter: ^9.0.0
+  http: ^0.13.3
+  multilevel_drawer: ^2.0.0
+  rxdart: ^0.27.1
+  spincircle_bottom_bar: ^1.0.0
+  syncfusion_flutter_charts: ^19.1.67
+  webview_flutter: any
 
 dev_dependencies:
   flutter_test:
@@ -43,15 +51,7 @@ flutter:
   assets:
     - assets/images/
   #   - images/a_dot_ham.jpeg
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware.
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
+  
   fonts:
     - family: Poppins
       fonts:
