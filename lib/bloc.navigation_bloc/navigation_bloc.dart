@@ -61,6 +61,12 @@ class NavigationBloc extends Bloc<NavigationEvents, NavigationStates> {
       case NavigationEvents.DevicesLocationClickEvent:
         yield DevicesLocation();
         break;
+      case NavigationEvents.AccountClickEvent:
+        // TODO: Handle this case.
+        break;
+      case NavigationEvents.SettingsClickEvent:
+        // TODO: Handle this case.
+        break;
     }
   }
 }

@@ -1,4 +1,3 @@
-import 'package:api_example_app/SensorScreen/charts/webview/SoilPH.dart';
 import 'package:api_example_app/SensorScreen/charts/webview/SoilPhos.dart';
 import 'package:flutter/material.dart';
 

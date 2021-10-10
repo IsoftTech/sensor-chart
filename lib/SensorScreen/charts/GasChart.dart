@@ -1,13 +1,9 @@
-import '/SensorScreen/charts/chartComponents/TemCard.dart';
 import '/SensorScreen/charts/chartComponents/TemChartRectangular.dart';
 import '../../bloc.navigation_bloc/navigation_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:api_example_app/constants.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '/LandingScreen/components/Cards.dart';
 
 import 'chartComponents/GasCard.dart';
-import 'chartComponents/NurCard.dart';
 
 class GasChart extends StatefulWidget with NavigationStates {
   @override
@@ -40,8 +36,8 @@ class _GasChartState extends State<GasChart> {
         ),
         body: ListView(
           children: [
-            TemChartRectangular(),
-            GasCard(),
+            TemChartRectangular(size: size),
+            GasCard(size: size),
           ],
         ));
   }

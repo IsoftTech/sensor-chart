@@ -1,8 +1,5 @@
 import 'package:api_example_app/SensorScreen/charts/webview/SoilMoist.dart';
 import 'package:flutter/material.dart';
-import 'package:api_example_app/constants.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:api_example_app/LandingScreen/components/Cards.dart';
 
 class MoisCard extends StatelessWidget {
   const MoisCard({

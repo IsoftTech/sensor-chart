@@ -2,9 +2,6 @@ import 'package:api_example_app/SensorScreen/charts/chartComponents/TemChartRect
 import '../../bloc.navigation_bloc/navigation_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:api_example_app/constants.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:api_example_app/LandingScreen/components/Cards.dart';
-
 import 'chartComponents/MoisCard.dart';
 
 class MoisChart extends StatefulWidget with NavigationStates {
@@ -38,8 +35,8 @@ class _MoisChartState extends State<MoisChart> {
         ),
         body: ListView(
           children: [
-            TemChartRectangular(),
-            MoisCard(),
+            TemChartRectangular(size: size),
+            MoisCard(size: size),
           ],
         ));
   }

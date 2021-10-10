@@ -35,8 +35,8 @@ class _SoilPhosChartState extends State<SoilPhosChart> {
         ),
         body: ListView(
           children: [
-            TemChartRectangular(),
-            SoilPhosCard(),
+            TemChartRectangular(size: size),
+            SoilPhosCard(size: size),
           ],
         ));
   }

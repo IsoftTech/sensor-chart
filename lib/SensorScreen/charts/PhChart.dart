@@ -2,10 +2,7 @@ import 'package:api_example_app/SensorScreen/charts/chartComponents/TemChartRect
 import '../../bloc.navigation_bloc/navigation_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:api_example_app/constants.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:api_example_app/LandingScreen/components/Cards.dart';
 
-import 'chartComponents/MoisCard.dart';
 import 'chartComponents/PhCard.dart';
 
 class PhChart extends StatefulWidget with NavigationStates {
@@ -39,8 +36,12 @@ class _PhChartState extends State<PhChart> {
         ),
         body: ListView(
           children: [
-            TemChartRectangular(),
-            PhCard(),
+            TemChartRectangular(
+              size: size,
+            ),
+            PhCard(
+              size: size,
+            ),
           ],
         ));
   }
