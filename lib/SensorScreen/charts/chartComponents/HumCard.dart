@@ -1,4 +1,3 @@
-import 'package:api_example_app/SensorScreen/charts/webview/SoilHum.dart';
 import 'package:api_example_app/SensorScreen/charts/widgets/Line_chatrt_hum.dart';
 import 'package:flutter/material.dart';
 

@@ -9,7 +9,6 @@ import 'package:spincircle_bottom_bar/modals.dart';
 import 'package:spincircle_bottom_bar/spincircle_bottom_bar.dart';
 
 import '../../constants.dart';
-import '/LandingScreen/SideBar/bottomBar.dart';
 
 import '/LandingScreen/components/body.dart';
 import '/bloc.navigation_bloc/navigation_bloc.dart';
@@ -41,9 +40,8 @@ class SideBarLayout extends StatelessWidget {
         child: Stack(
           children: [
             BlocBuilder<NavigationBloc, NavigationStates>(
-                builder: (context, NavigationState) {
-              return NavigationState as Widget;
-            }),
+              builder: (context, navigationState) => navigationState as Widget,
+            ),
             SpinCircleBottomBarHolder(
               bottomNavigationBar: SCBottomBarDetails(
                   circleColors: [kBgColor, kDarkGreyColor, kOrangeColor],

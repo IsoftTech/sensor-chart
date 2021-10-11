@@ -36,8 +36,8 @@ class _NurChartState extends State<NurChart> {
         ),
         body: ListView(
           children: [
-            TemChartRectangular(),
-            NurCard(),
+            TemChartRectangular(size: size),
+            NurCard(size: size),
           ],
         ));
   }

@@ -1,8 +1,8 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 import 'package:http/http.dart' as http;
 
 // import 'package:http/http.dart' as http;
@@ -58,13 +58,24 @@ class _LineChartHumState extends State<LineChartHum> {
 
   List<SensorData> chartData = [];
   Future loadSensorData() async {
-    final jsonResponse = json.decode(toString());
+    final jsonResponse = json.decode(/*toString()*/ await fetchApi());
     // print(jsonString);
     // print(jsonResponse);
     setState(() {
-      for (Map i in jsonResponse) chartData.add(SensorData.fromJson(i));
+      for (Map i in jsonResponse['feeds']) {
+        try {
+          chartData.add(SensorData.fromJson(i));
+        } catch (e) {}
+      }
     });
   }
+}
+
+Future<String> fetchApi() async {
+  var url =
+      Uri.parse('https://api.thingspeak.com/channels/960293/field/8.json');
+  http.Response response = await http.get(url);
+  return response.body.toString();
 }
 
 Future<String> fetchUsers() async {
@@ -86,9 +97,11 @@ class SensorData {
   factory SensorData.fromJson(Map<String, dynamic> json) {
     return SensorData(
       timeStamp: DateTime.parse(
-        json['timeStamp'],
+        json['created_at'],
       ),
-      sensorValue: json['SensorValue'],
+      sensorValue: double.parse(
+              json['field8'].toString().replaceAll(RegExp('[.,].*'), ''))
+          .toInt(),
     );
   }
 }

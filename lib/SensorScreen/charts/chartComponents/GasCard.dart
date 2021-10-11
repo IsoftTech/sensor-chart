@@ -1,6 +1,5 @@
 import 'package:api_example_app/SensorScreen/charts/webview/SoilCont.dart';
 import 'package:flutter/material.dart';
-import 'package:api_example_app/constants.dart';
 
 class GasCard extends StatelessWidget {
   const GasCard({

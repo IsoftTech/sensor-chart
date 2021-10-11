@@ -35,8 +35,8 @@ class _SoilPatChartState extends State<SoilPatChart> {
         ),
         body: ListView(
           children: [
-            TemChartRectangular(),
-            SoilPatCard(),
+            TemChartRectangular(size: size),
+            SoilPatCard(size: size),
           ],
         ));
   }
